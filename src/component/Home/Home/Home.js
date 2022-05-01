@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Banner from '../Banner/Banner';
 import Item from '../Item/Item';
 import './Home.css'
 
@@ -10,13 +11,16 @@ const Home = () => {
             .then(data => setItems(data))
     }, [])
     return (
-        <div className='container mt-4 '>
-            <div className='row'>
-                {
-                    items.slice(0, 6).map(item => <Item
-                        item={item}
-                    />)
-                }
+        <div>
+            <Banner/>
+            <div className='container mt-4 '>
+                <div className='row'>
+                    {
+                        items.slice(0, 6).map(item => <Item
+                            item={item}
+                        />)
+                    }
+                </div>
             </div>
         </div>
     );
