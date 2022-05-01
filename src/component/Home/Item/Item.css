@@ -1,0 +1,11 @@
+.item-container{
+    width: 350px;
+    margin: 2rem auto;
+    height: 550px;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 41px;
+    background: #e0e0e0;
+    box-shadow:  23px 23px 46px #868686,
+                 -23px -23px 46px #ffffff;
+}
