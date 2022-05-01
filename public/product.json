@@ -1,0 +1,66 @@
+[
+    {
+        "_id":"1",
+        "name": "Samsung Galaxy M53",
+        "picture": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-m53-5g.jpg",
+        "Description": "Released 2022, April 22.176g, 7.4mm thickness,Android 12, One UI 4.1,128GB/256GB storage, microSDXC",
+        "price": "$26,499",
+        "quantity": 3,
+        "supplierName": "Joy"
+    },
+    {
+        "_id":"2",
+        "name": "Samsung Galaxy A73 5G",
+        "picture": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a73-5g.jpg",
+        "Description": "Released 2022, April 22,181g, 7.6mm thickness,Android 12, One UI 4.1,128GB/256GB storage, microSDXC",
+        "price": "$36.499",
+        "quantity": 2,
+        "supplierName": "Rifat"
+    },
+    {
+        "_id":"3",
+        "name": "Samsung Galaxy S22 Ultra 5G",
+        "picture": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-ultra-5g.jpg",
+        "Description": "Released 2022, February 25,228g / 229g (mmWave), 8.9mm thickness,Android 12, One UI 4.1,128GB/256GB/1TB storage, no card slot",
+        "price": "$40.499",
+        "quantity": 3,
+        "supplierName": "Sanim"
+    },
+    {
+        "_id":"4",
+        "name": "Apple iPhone 13 Pro Max",
+        "picture": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro-max.jpg",
+        "Description": "Released 2022, April 22.176g, 7.4mm thickness,Android 12, One UI 4.1,128GB/256GB storage, microSDXC",
+        "price": "$60.499",
+        "quantity": 4,
+        "supplierName": "Hapiz"
+    },
+    {
+        "_id":"5",
+        "name": "Apple iPhone 13",
+        "picture": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg",
+        "Description": "Released 2021, September 24,174g, 7.7mm thickness,iOS 15, up to iOS 15.4.1,128GB/256GB/512GB storage, no card slot",
+        "price": "$50.888",
+        "quantity": 2,
+        "supplierName": "kbir"
+    },
+    {
+        "_id":"6",
+        "name": "Xiaomi 12 Pro",
+        "picture": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12-pro.jpg",
+        "Description": "Released 2021, December 31,204g or 205g, 8.2mm thickness,Android 12, MIUI 13,128GB/256GB storage, no card slot",
+        "price": "$40.888",
+        "quantity": 2,
+        "supplierName": "OVI"
+    },
+    {
+        "_id":"7",
+        "name": "Xiaomi Redmi Note 11 Pro",
+        "picture": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg",
+        "Description": "Released 2021, November 01,204g, 8.3mm thickness,Android 11, MIUI 12.5,128GB/256GB storage, microSDXC",
+        "price": "$50.888",
+        "quantity": 1,
+        "supplierName": "Sanim"
+    }
+   
+  ]
