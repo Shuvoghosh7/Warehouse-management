@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AiFillEye } from 'react-icons/ai';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../Firebase/Firebase.init';
 import Loading from '../../Share/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const [showPass, setPass] = useState(false)
@@ -25,9 +26,7 @@ const Login = () => {
         loading,
         hookError,
     ] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail,sending] = useSendPasswordResetEmail(
-        auth
-      );
+    const [sendPasswordResetEmail,sending] = useSendPasswordResetEmail(auth);
     const handealEmail = (e) => {
         const emailRegex = /\S+@\S+\.\S+/;
         const validEmail = emailRegex.test(e.target.value);
@@ -62,7 +61,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        if (user) {
+        if (user){
             navigate(from);
         }
     }, [user]);
@@ -98,6 +97,8 @@ const Login = () => {
                 {errors?.password && <p className="error-message">{errors.password}</p>}
 
                 <button>Sing In</button>
+                <SocialLogin/>
+                
             </form>
             <p>Don't Have an account? <Link to="/register">Sing up First</Link></p>
             <button onClick={resatePassword}>Reset Password</button>
