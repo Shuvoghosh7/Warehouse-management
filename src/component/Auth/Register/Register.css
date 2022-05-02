@@ -108,3 +108,11 @@
 .error-message::before {
     content: "❌ ";
 }
+.possitionR{
+    position: relative;
+}
+.possitionA{
+    position: absolute;
+    top: 7px;
+    right: 10px;
+}

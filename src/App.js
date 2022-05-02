@@ -8,6 +8,7 @@ import Inventory from './component/Inventory/Inventory';
 import Register from './component/Auth/Register/Register';
 import Login from './component/Auth/Login/Login';
 import RequireAuth from './component/Auth/RequireAuth/RequireAuth';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
       </Routes>
+      <ToastContainer/>
     </div>
   );
 }
