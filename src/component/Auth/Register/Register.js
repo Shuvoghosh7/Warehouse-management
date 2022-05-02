@@ -79,6 +79,7 @@ const Register = () => {
             navigate(from);
         }
     }, [user]);
+    
     return (
         <div className='login-container'>
             <h1 className='login-title'>Register Now</h1>
