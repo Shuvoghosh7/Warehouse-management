@@ -7,6 +7,7 @@ import Home from './component/Home/Home/Home';
 import Inventory from './component/Inventory/Inventory';
 import Register from './component/Auth/Register/Register';
 import Login from './component/Auth/Login/Login';
+import RequireAuth from './component/Auth/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -14,7 +15,11 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/inventory/:inventoryId' element={<Inventory/>}/>
+        <Route path='/inventory/:inventoryId' element={
+          <RequireAuth>
+            <Inventory/>
+          </RequireAuth>
+        }/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
       </Routes>
