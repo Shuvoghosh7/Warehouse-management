@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Register.css'
-import { BsFacebook } from 'react-icons/bs';
-import { FcGoogle } from 'react-icons/fc';
+
 import { AiFillEye } from 'react-icons/ai';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/Firebase.init';
 import { toast } from 'react-toastify';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import SocialLogin from '../SocialLogin/SocialLogin';
 const Register = () => {
     const [userInfo, setUserInfo] = useState({
         email: "",
@@ -99,10 +99,7 @@ const Register = () => {
                     <p className='possitionA' onClick={() => setPass2(!showPass2)}><AiFillEye /></p>
                 </div>
                 <button>Sing Up</button>
-                <div className="social">
-                    <div className="go"><FcGoogle />  Google</div>
-                    <div className="fb"><BsFacebook /> Facebook</div>
-                </div>
+               <SocialLogin/>
             </form>
             <p>Already Have an Account? <Link to="/login">Sing In</Link></p>
 
