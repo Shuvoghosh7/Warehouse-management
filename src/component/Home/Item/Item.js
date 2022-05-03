@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Item.css'
 
 const Item = ({ item }) => {
@@ -26,8 +26,11 @@ const Item = ({ item }) => {
                 </div>
                 <p><b>Quantity:</b>{quantity}</p>
             </div>
-            <div className='text-center '>
+            <div className='d-flex justify-content-around'>
                 <button className='btn btn-outline-success rounded-pill' onClick={()=>InventoryDetails(_id)}>Update</button>
+              
+                <Link className='btn btn-outline-success rounded-pill' to="/manageInventory">Manage Inventory</Link>
+                
             </div>
 
         </div>

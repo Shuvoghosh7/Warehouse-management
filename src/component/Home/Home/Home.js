@@ -6,10 +6,11 @@ import './Home.css'
 const Home = () => {
     const [items, setItems] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('http://localhost:5000/product/')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
+  
     return (
         <div>
             <Banner/>
