@@ -1,24 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import ShowAllProduct from './ShowAllProduct';
+import { RiDeleteBin6Fill } from 'react-icons/ri';
 
 const ManageInventory = () => {
     const [product, setProduct] = useState([])
-    console.log(product)
+    const [isReload, setIsReload] = useState(false);
     useEffect(() => {
         fetch('http://localhost:5000/product/')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
+    const handealDelait = (delitId) => {
+        const proceed = window.confirm("are you confirm,Delit This Item?")
+        if (proceed) {
+            const url = `http://localhost:5000/product/${delitId}`
+            fetch(url,{
+                method:'DELETE'
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    const remaining= product.filter(pd => pd._id !== delitId)
+                    setProduct(remaining)
+    
+                })
+        }
+    }
+
     return (
         <div className='mt-3'>
-            <table class="table table-bordered table-dark">
+            <table className="table table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col">price</th>
                         <th scope="col">Description</th>
-                        <th scope="col">quantity</th>
-                        <th scope="col">supplierName</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">SupplierName</th>
+                        <th scope="col">Button</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,8 +50,7 @@ const ManageInventory = () => {
                                     <td>{value.Description}</td>
                                     <td>{value.quantity}</td>
                                     <td>{value.supplierName}</td>
-                                    <td>{value.supplierName}</td>
-                                    <td>{value.supplierName}</td>
+                                    <td><button className='btn text-danger' onClick={()=>handealDelait(value._id)}><RiDeleteBin6Fill /></button></td>
                                 </tr>
                             )
                         })
