@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 const ManageInventory = () => {
     const [product, setProduct] = useState([])
@@ -13,22 +14,22 @@ const ManageInventory = () => {
         const proceed = window.confirm("are you confirm,Delit This Item?")
         if (proceed) {
             const url = `http://localhost:5000/product/${delitId}`
-            fetch(url,{
-                method:'DELETE'
+            fetch(url, {
+                method: 'DELETE'
 
             })
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    const remaining= product.filter(pd => pd._id !== delitId)
+                    const remaining = product.filter(pd => pd._id !== delitId)
                     setProduct(remaining)
-    
+
                 })
         }
     }
 
     return (
-        <div className='mt-3'>
+        <div className='mt-3 container'>
             <table className="table table-bordered">
                 <thead>
                     <tr>
@@ -50,13 +51,16 @@ const ManageInventory = () => {
                                     <td>{value.Description}</td>
                                     <td>{value.quantity}</td>
                                     <td>{value.supplierName}</td>
-                                    <td><button className='btn text-danger' onClick={()=>handealDelait(value._id)}><RiDeleteBin6Fill /></button></td>
+                                    <td><button className='btn text-danger' onClick={() => handealDelait(value._id)}><RiDeleteBin6Fill /></button></td>
                                 </tr>
                             )
                         })
                     }
                 </tbody>
             </table>
+            <div className='text-center'>
+                <Link className='btn btn-outline-success rounded-pill' to="/addItem">Add New Item</Link>
+            </div>
         </div>
     );
 };

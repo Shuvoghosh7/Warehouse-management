@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useProduct from '../Hooks/useProduct/useProduct';
 
 const Inventory = () => {
@@ -37,8 +37,9 @@ return (
             </div>
             <p><b>Quantity:</b>{product.quantity}</p>
         </div>
-        <div className='text-center'>
+        <div className='text-center d-flex justify-content-around'>
             <button className='btn btn-outline-success rounded-pill' onClick={handleUpdate}>Delivered</button>
+            <Link className='btn btn-outline-success rounded-pill' to="/manageInventory">Manage Inventory</Link>
         </div>
     </div>
 );

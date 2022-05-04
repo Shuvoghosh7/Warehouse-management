@@ -48,7 +48,7 @@
     color:#3a6073;
 }
 
-.login-container input {
+.login-container input{
     background: #ecf0f3;
     margin: 15px 0 0 0;
     padding: 10px;
@@ -58,7 +58,17 @@
     border-radius: 50px;
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #656565;
 }
-
+.login-container textarea{
+    background: #ecf0f3;
+    margin: 15px 0 0 0;
+    padding: 10px;
+    padding-left: 20px;
+    height: 70px;
+    width: 270px;
+    font-size: 14px;
+    border-radius: 20px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #656565;
+}
 .login-container button {
     color: white;
     margin-top: 20px;
