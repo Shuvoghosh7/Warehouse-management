@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AddItem = () => {
-    const addNewItem = event => {
+    const addNewItem = (event)=> {
         event.preventDefault();
         const picture = event.target.picture.value;
         const name = event.target.name.value;

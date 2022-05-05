@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const ManageInventory = () => {
     const [product, setProduct] = useState([])
-    const [isReload, setIsReload] = useState(false);
     useEffect(() => {
         fetch('http://localhost:5000/product/')
             .then(res => res.json())
