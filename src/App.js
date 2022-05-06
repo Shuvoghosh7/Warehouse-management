@@ -14,6 +14,8 @@ import AddItem from './component/AddItem/AddItem';
 import Footer from './component/Share/Footer/Footer';
 import NotFound from './component/NotFound/NotFound';
 import Blog from './component/Blog/Blog';
+import MyItem from './component/MyItem/MyItem';
+import Brands from './component/Home/Brands/Brands';
 
 function App() {
   return (
@@ -31,6 +33,11 @@ function App() {
         <Route path='/addItem' element={
           <RequireAuth>
             <AddItem/>
+          </RequireAuth>
+        }/>
+        <Route path='/myitem' element={
+          <RequireAuth>
+            <MyItem/>
           </RequireAuth>
         }/>
         <Route path='/register' element={<Register/>}/>

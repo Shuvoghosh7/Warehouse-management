@@ -1,17 +1,33 @@
 import React, { useEffect } from 'react';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { BsFacebook } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
 const SocialLogin = () => {
-    const [signInWithGoogle, user, loading, googleError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, loading, googleError] = useSignInWithGoogle(auth);
+    const [user] = useAuthState(auth);
     const navigate =useNavigate()
     const location =useLocation()
     let from=location.state?.from?.pathname || "/"
     if(user){
-        navigate(from,{replase:true})
+        const url = "http://localhost:5000/login"
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                email:user.email
+            })
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result)
+                
+            })
+            navigate(from,{replase:true});
       }
       useEffect(() => {
         toast(googleError?.message)

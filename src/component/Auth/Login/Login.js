@@ -60,11 +60,12 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
-    useEffect(() => {
-        if (user){
-            navigate(from);
-        }
-    }, [user]);
+    
+        useEffect(()=>{
+            if (user){
+             navigate(from);
+            }
+        },[user])
     useEffect(() => {
         toast(hookError?.message)
 

@@ -21,7 +21,8 @@ const Header = () => {
                             
                         </Nav>
                         <Nav>
-                            <Nav.Link as={Link} to="addItem">Add Item</Nav.Link>
+                            {user && <Nav.Link as={Link} to="myitem">My Item</Nav.Link>}
+                           {user && <Nav.Link as={Link} to="addItem">Add Item</Nav.Link>}
                             {user?<Button onClick={()=>signOut(auth)}>Logout</Button> :<Nav.Link as={Link} to="login">Sing In</Nav.Link>}
                             <Nav.Link as={Link} eventKey={2} to="/register">
                                 Sing Up

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
+import Brands from '../Brands/Brands';
 import Item from '../Item/Item';
 import './Home.css'
 
@@ -14,6 +15,7 @@ const Home = () => {
     return (
         <div>
             <Banner/>
+            <Brands/>
             <div className='container mt-4 '>
                 <div className='row'>
                     {
