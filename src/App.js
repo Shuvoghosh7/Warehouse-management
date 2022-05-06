@@ -13,6 +13,7 @@ import ManageInventory from './component/MangeInventory/ManageInventory';
 import AddItem from './component/AddItem/AddItem';
 import Footer from './component/Share/Footer/Footer';
 import NotFound from './component/NotFound/NotFound';
+import Blog from './component/Blog/Blog';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/manageInventory' element={<ManageInventory/>}/>
+        <Route path='/blog' element={<Blog/>}/>
         <Route path='/inventory/:inventoryId' element={
           <RequireAuth>
             <Inventory/>
