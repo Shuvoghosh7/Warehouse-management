@@ -12,21 +12,6 @@ const SocialLogin = () => {
     const location =useLocation()
     let from=location.state?.from?.pathname || "/"
     if(user){
-        const url = "http://localhost:5000/login"
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                email:user.email
-            })
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result)
-                
-            })
             navigate(from,{replase:true});
       }
       useEffect(() => {
