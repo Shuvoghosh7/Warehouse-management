@@ -8,7 +8,7 @@ const Brands = () => {
     return (
         <div className='mt-3'>
             <h3>Available  Brands</h3>
-            <div className='d-lg-flex  justify-content-lg-between container'>
+            <div className='d-lg-flex  justify-content-lg-between container sm-text-center'>
                 <div>
                     <img  src={mi} alt="" />
                 </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import Brands from '../Brands/Brands';
 import Item from '../Item/Item';
+import UpcomingProducts from '../UpcomingProducts/UpcomingProducts';
 import './Home.css'
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <UpcomingProducts/>
         </div>
     );
 };
