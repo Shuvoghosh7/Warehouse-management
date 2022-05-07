@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-import useProduct from '../Hooks/useProduct/useProduct';
+
 
 const Inventory = () => {
     const { inventoryId } = useParams()
-    /* const [product, setProduct] = useProduct(inventoryId) */
+   
+    const [reload, setReload] = useState(false)
     const[product,setProduct]=useState([])
     useEffect(() => {
         const url = `http://localhost:5000/product/${inventoryId}`
@@ -14,11 +15,8 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
-    const [reload, setReload] = useState(true)
-
-
     const addQuantity = (event) => {
-        event.preventDefault()
+    
         const newquantity = event.target.quantity.value;
         if (newquantity !== " ") {
             const addQuantity = parseInt(product.quantity) + parseInt(newquantity)
@@ -37,26 +35,11 @@ const Inventory = () => {
                     event.target.reset();
                 });
         }
-        /*  const newquantity = event.target.quantity.value;
-         const addQuantity = newquantity
-             const url = `http://localhost:5000/product/${inventoryId}`
-             fetch(url, {
-                 method: "PUT",
-                 headers: {
-                     "Content-Type": "application/json",
-                 },
-                 body: JSON.stringify({ addQuantity }),
-             })
-                 .then((res) => res.json())
-                 .then((data) => {
-                     console.log('success', data)
-                     
-                 }); */
+         
     }
-    /* const reduceQuantity=(productId)=>{
-        
-            const quantityReduce=parseInt(product.quantity )- 1
-            const url = `http://localhost:5000/product/${productId}`
+    const reduceQuantity=(productId)=>{
+            const quantityReduce=product.quantity - 1
+            const url = `http://localhost:5000/products/${productId}`
             fetch(url, {
                 method: "PUT",
                 headers: {
@@ -66,10 +49,12 @@ const Inventory = () => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log('success', data)
+                    // window.location.reload(); 
+                    // setReload(reload)
+                    window.location.reload(false);
                     
                 });
-    } */
+    }
 
     return (
         <div className='item-container'>
@@ -87,7 +72,7 @@ const Inventory = () => {
                 <p><b>Quantity:</b>{product.quantity}</p>
             </div>
             <div className='text-center d-flex justify-content-around'>
-                <button className='btn btn-outline-success rounded-pill' >Delivered</button>
+                <button className='btn btn-outline-success rounded-pill' onClick={()=>reduceQuantity(inventoryId)}>Delivered</button>
                 <Link className='btn btn-outline-success rounded-pill' to="/manageInventory">Manage Inventory</Link>
             </div>
             <form className="text-center" onSubmit={addQuantity}>

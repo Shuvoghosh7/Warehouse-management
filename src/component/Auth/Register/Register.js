@@ -40,13 +40,13 @@ const Register = () => {
     }
 
     const handealPassword = (e) => {
-        const passwordRegex = /.{6,8}/;
+        const passwordRegex = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{7,}$/;
         const validPassword = passwordRegex.test(e.target.value);
         if (validPassword) {
             setUserInfo({ ...userInfo, password: e.target.value });
             setErrors({ ...errors, password: "" });
         } else {
-            setErrors({ ...errors, password: "Minimum 6 or 8 characters!" });
+            setErrors({ ...errors, password: "Should contain least one digit,one lower case,one upper case and 8 characters!" });
             setUserInfo({ ...userInfo, password: "" });
         }
 

@@ -115,9 +115,7 @@
     margin: 10px;
 }
 
-.error-message::before {
-    content: "❌ ";
-}
+
 .possitionR{
     position: relative;
 }

@@ -1,20 +1,24 @@
 # smartphone-warehouse
 # Client-side code Github repository LinK:
+
 # server-side code Github repository LinK:
+
 #  live website link:
 # stackoverflow Question/answer Link:
 https://stackoverflow.com/questions/72147412/how-do-i-update-a-record-using-the-put-api
 
 
 ##  Project Description:
-This project is smartphone warehouse.Heare home page show 6 item.Another page show all product.This project use Email and password login system for sing in.Able to add new item by additem page.
+This project is smartphone warehouse.Here user can see his/her Available product.User can add product quentity and increace product quentity.user can delete product item when user are login.User also add product new item when user are login.Whithout Login user can not add or delete product.User can register using valid email or password ang google login system.
 
 
 ## Features and Functionality:
 * This project have simple navbar, banner, Brands section,some product in home page,Upcoming Products section and a footer.
+* Home page show 6 item.
 * Home page every item have update and manage Inventory button.
 * Banner part carousel used 
 * ManageInventory page show all item in table
+* update button go a route with item id and show item details.
 * Additem page able to add new item. 
 * This system have Email and password login system
 * And also have Google Login System.

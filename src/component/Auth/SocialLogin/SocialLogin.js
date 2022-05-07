@@ -24,7 +24,7 @@ const SocialLogin = () => {
         })
             .then(res => res.json())
             .then(result => {
-                localStorage.setItem('accessToken',result.token)
+                localStorage.setItem('getToken',result.token)
                 navigate(from, { replace: true });
             })
     }

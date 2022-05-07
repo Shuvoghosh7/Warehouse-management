@@ -1,6 +1,11 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
+
+import auth from '../Firebase/Firebase.init';
 
 const AddItem = () => {
+    const [user] = useAuthState(auth);
     const addNewItem = (event)=> {
         event.preventDefault();
         const picture = event.target.picture.value;
@@ -10,18 +15,20 @@ const AddItem = () => {
        
         const quantity = event.target.quantity.value;
         const supplierName = event.target.supplierName.value;
-        console.log(Description)
+        
         const url = `http://localhost:5000/product`
         fetch(url, {
             method: 'POST',
             headers: {
+                'authorization':`${user.email} ${localStorage.getItem("getToken")}`,
                 'content-type': 'application/json'
             },
             body: JSON.stringify({picture,name,price,Description,quantity,supplierName})
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
+                event.target.reset();
+                toast("successfully added new item")
             })
     };
 
