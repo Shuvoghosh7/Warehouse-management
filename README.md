@@ -9,7 +9,7 @@ https://stackoverflow.com/questions/72147412/how-do-i-update-a-record-using-the-
 
 
 ##  Project Description:
-This project is smartphone warehouse.Here user can see his/her Available product.User can add product quentity and increace product quentity.user can delete product item when user are login.User also add product new item when user are login.Whithout Login user can not add or delete product.User can register using valid email or password ang google login system.
+This project is smartphone warehouse.Here user can see his/her Available product.User can add product quentity and decrease product quentity.user can delete product item when user are login.User also add product new item when user are login.Whithout Login user can not add or delete product.User can register using valid email or password ang google login system.
 
 
 ## Features and Functionality:
