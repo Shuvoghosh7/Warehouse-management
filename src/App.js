@@ -23,6 +23,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/home' element={<Home/>}/>
         <Route path='/manageInventory' element={<ManageInventory/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/inventory/:inventoryId' element={

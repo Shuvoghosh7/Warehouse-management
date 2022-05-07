@@ -1,10 +1,25 @@
-# Getting Started with Create React App
+# smartphone-warehouse
+# Client-side code Github repository LinK:
+# server-side code Github repository LinK:
+#  live website link:
+# stackoverflow Question/answer Link:
+https://stackoverflow.com/questions/72147412/how-do-i-update-a-record-using-the-put-api
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+##  Project Description:
+This project is smartphone warehouse.Heare home page show 6 item.Another page show all product.This project use Email and password login system for sing in.Able to add new item by additem page.
 
-In the project directory, you can run:
+
+## Features and Functionality:
+* This project have simple navbar, banner, Brands section,some product in home page,Upcoming Products section and a footer.
+* Home page every item have update and manage Inventory button.
+* Banner part carousel used 
+* ManageInventory page show all item in table
+* Additem page able to add new item. 
+* This system have Email and password login system
+* And also have Google Login System.
+* This system use mongodb database
+* Hava a Blogs Component and this component add 3 Question
 
 ### `npm start`
 

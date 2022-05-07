@@ -5,11 +5,20 @@ import useProduct from '../Hooks/useProduct/useProduct';
 
 const Inventory = () => {
     const { inventoryId } = useParams()
-    const [product,setProduct] = useProduct(inventoryId)
-    const[reload,setReload]=useState(true)
-   
-    
+    /* const [product, setProduct] = useProduct(inventoryId) */
+    const[product,setProduct]=useState([])
+    useEffect(() => {
+        const url = `http://localhost:5000/product/${inventoryId}`
+        fetch(url)
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setProduct(data))
+    }, [])
+    const [reload, setReload] = useState(true)
+
+
     const addQuantity = (event) => {
+        event.preventDefault()
         const newquantity = event.target.quantity.value;
         if (newquantity !== " ") {
             const addQuantity = parseInt(product.quantity) + parseInt(newquantity)
@@ -23,25 +32,26 @@ const Inventory = () => {
             })
                 .then((res) => res.json())
                 .then((data) => {
+                    setReload(!reload)
                     console.log('success', data)
                     event.target.reset();
                 });
         }
-       /*  const newquantity = event.target.quantity.value;
-        const addQuantity = newquantity
-            const url = `http://localhost:5000/product/${inventoryId}`
-            fetch(url, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ addQuantity }),
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log('success', data)
-                    
-                }); */
+        /*  const newquantity = event.target.quantity.value;
+         const addQuantity = newquantity
+             const url = `http://localhost:5000/product/${inventoryId}`
+             fetch(url, {
+                 method: "PUT",
+                 headers: {
+                     "Content-Type": "application/json",
+                 },
+                 body: JSON.stringify({ addQuantity }),
+             })
+                 .then((res) => res.json())
+                 .then((data) => {
+                     console.log('success', data)
+                     
+                 }); */
     }
     /* const reduceQuantity=(productId)=>{
         
