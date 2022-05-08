@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const useProduct =(productId)=>{
     const[product,setProduct]=useState([])
     useEffect(()=>{
-        const url=`http://localhost:5000/product/${productId}`
+        const url=`https://mysterious-river-94324.herokuapp.com/product/${productId}`
         fetch(url)
         fetch(url)
         .then(res =>res.json())

@@ -43,10 +43,6 @@ const Blog = () => {
                 </ul>
             </article>
             <article>
-                <h5>2. When should you use nodejs and when should you use mongodb</h5>
-                <p></p>
-            </article>
-            <article>
                 <h5>3. Differences between sql and nosql databases.</h5>
                 <p><b>SQL</b></p>
                 <ul>

@@ -12,19 +12,19 @@ const SocialLogin = () => {
     const location = useLocation()
     const from = location.state?.from?.pathname || "/"
     if (user) {
-        const url = "http://localhost:5000/login"
+        const url = "https://mysterious-river-94324.herokuapp.com/login"
         fetch(url, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify({
-                email:user.email
+                email: user.email
             })
         })
             .then(res => res.json())
             .then(result => {
-                localStorage.setItem('getToken',result.token)
+                localStorage.setItem('getToken', result.token)
                 navigate(from, { replace: true });
             })
     }

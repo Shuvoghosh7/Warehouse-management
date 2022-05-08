@@ -9,7 +9,7 @@ const ManageInventory = () => {
     const [user] = useAuthState(auth );
     const [product, setProduct] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/product/')
+        fetch('https://mysterious-river-94324.herokuapp.com/product/')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -20,7 +20,7 @@ const ManageInventory = () => {
     const handealDelait = (delitId) => {
         const proceed = window.confirm("are you confirm,Delit This Item?")
         if (proceed) {
-            const url = `http://localhost:5000/product/${delitId}`
+            const url = `https://mysterious-river-94324.herokuapp.com/product/${delitId}`
             fetch(url, {
                 method: 'DELETE'
 
@@ -34,30 +34,6 @@ const ManageInventory = () => {
                 })
         }
     }
-    /* const handealMyitem=(item)=>{
-        const{name,picture,price,quantity,sellStatus,supplierName,Description}=item
-        // console.log(name,user.email)
-        fetch('http://localhost:5000/myItem', {
-            method: 'POST',
-            body: JSON.stringify({
-                name,
-                picture,
-                price,
-                Description,
-                quantity,
-                sellStatus,
-                supplierName,
-                email:user.email
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                toast("item added successfully!")
-            });
-    } */
     return (
         <div className='mt-3 container'>
             <table className="table table-bordered">
@@ -85,9 +61,6 @@ const ManageInventory = () => {
                                     <td>{value.supplierName}</td>
                                     <td className='d-flex justify-content-center align-items-center'>
                                         <button onClick={()=>ItemDetails(value._id)} className='btn btn-outline-success rounded-pill' >updateItem</button>
-                                        {/* <button onClick={()=>handealMyitem(value)}>
-                                            my item
-                                        </button> */}
                                         <button className='btn text-danger' onClick={() => handealDelait(value._id)}><RiDeleteBin6Fill /></button></td>
                                 </tr>
                             )

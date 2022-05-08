@@ -9,7 +9,7 @@ const Inventory = () => {
     const [reload, setReload] = useState(false)
     const[product,setProduct]=useState([])
     useEffect(() => {
-        const url = `http://localhost:5000/product/${inventoryId}`
+        const url = `https://mysterious-river-94324.herokuapp.com/product/${inventoryId}`
         fetch(url)
         fetch(url)
             .then(res => res.json())
@@ -20,7 +20,7 @@ const Inventory = () => {
         const newquantity = event.target.quantity.value;
         if (newquantity !== " ") {
             const addQuantity = parseInt(product.quantity) + parseInt(newquantity)
-            const url = `http://localhost:5000/product/${inventoryId}`
+            const url = `https://mysterious-river-94324.herokuapp.com/product/${inventoryId}`
             fetch(url, {
                 method: "PUT",
                 headers: {
@@ -39,7 +39,7 @@ const Inventory = () => {
     }
     const reduceQuantity=(productId)=>{
             const quantityReduce=product.quantity - 1
-            const url = `http://localhost:5000/products/${productId}`
+            const url = `https://mysterious-river-94324.herokuapp.com/products/${productId}`
             fetch(url, {
                 method: "PUT",
                 headers: {

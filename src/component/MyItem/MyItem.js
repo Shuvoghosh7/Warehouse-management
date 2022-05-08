@@ -10,7 +10,7 @@ const MyItem = () => {
     console.log(myItem)
     useEffect(()=>{
         const email=user.email
-        const url=`http://localhost:5000/products?email=${email}`
+        const url=`https://mysterious-river-94324.herokuapp.com/products?email=${email}`
         fetch(url)
         .then(res => res.json())
         .then(data => setMyItem(data))
@@ -18,7 +18,7 @@ const MyItem = () => {
     const handealDelaite = (delitId) => {
         const proceed = window.confirm("are you confirm,Delit This Item?")
         if (proceed) {
-            const url = `http://localhost:5000/product/${delitId}`
+            const url = `https://mysterious-river-94324.herokuapp.com/product/${delitId}`
             fetch(url, {
                 method: 'DELETE'
 
@@ -67,9 +67,7 @@ const MyItem = () => {
                     }
                 </tbody>
             </table>
-            <div className='text-center'>
-                <Link className='btn btn-outline-success rounded-pill' to="/addItem">Add New Item</Link>
-            </div>
+            
         </div>
     );
 };

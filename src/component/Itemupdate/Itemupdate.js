@@ -10,7 +10,7 @@ const Itemupdate = () => {
         const quantity = event.target.quantity.value;
         const sellStatus= event.target.sellStatus.value;
         const supplierName = event.target.supplierName.value;
-        const url = `http://localhost:5000/updateItem/${itemId}`
+        const url = `https://mysterious-river-94324.herokuapp.com/updateItem/${itemId}`
         fetch(url, {
             method: "PUT",
             headers: {

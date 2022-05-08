@@ -63,7 +63,7 @@ const Login = () => {
 
     useEffect(() => {
         if (user) {
-            const url = "http://localhost:5000/login"
+            const url = "https://mysterious-river-94324.herokuapp.com/login"
             fetch(url, {
                 method: 'POST',
                 headers: {

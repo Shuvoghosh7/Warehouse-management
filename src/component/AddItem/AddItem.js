@@ -17,7 +17,7 @@ const AddItem = () => {
         const sellStatus = event.target.sellStatus.value;
         const supplierName = event.target.supplierName.value;
         
-        const url = `http://localhost:5000/product`
+        const url = `https://mysterious-river-94324.herokuapp.com/product`
         fetch(url, {
             method: 'POST',
             headers: {
