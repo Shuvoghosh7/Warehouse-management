@@ -24,7 +24,7 @@ const AddItem = () => {
                 'authorization':`${user.email} ${localStorage.getItem("getToken")}`,
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({picture,name,price,Description,quantity,sellStatus,supplierName})
+            body: JSON.stringify({picture,name,price,Description,quantity,sellStatus,supplierName,email:user.email})
         })
             .then(res => res.json())
             .then(result => {
@@ -32,7 +32,6 @@ const AddItem = () => {
                 toast("successfully added new item")
             })
     };
-
     return (
         <div className='login-container'>
             <h4 className='text-center text-success'>ADD NEW ITEM HEAR</h4>

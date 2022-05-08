@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AiFillEye } from 'react-icons/ai';
 import { toast } from 'react-toastify';
@@ -26,7 +26,7 @@ const Login = () => {
         loading,
         hookError,
     ] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail,sending] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const handealEmail = (e) => {
         const emailRegex = /\S+@\S+\.\S+/;
         const validEmail = emailRegex.test(e.target.value);
@@ -60,26 +60,41 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
-    
-        useEffect(()=>{
-            if (user){
-             navigate(from);
-            }
-        },[user])
+
+    useEffect(() => {
+        if (user) {
+            const url = "http://localhost:5000/login"
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: user.email
+                })
+            })
+                .then(res => res.json())
+                .then(result => {
+                    localStorage.setItem('getToken', result.token)
+                    navigate(from);
+                })
+            
+        }
+    }, [user])
     useEffect(() => {
         toast(hookError?.message)
 
     }, [hookError])
-  
-      if (sending) {
-        return <Loading/>;
-      }
-      const resatePassword= async()=>{
+
+    if (sending) {
+        return <Loading />;
+    }
+    const resatePassword = async () => {
         const email = userInfo.email
-        if(email){
-        await sendPasswordResetEmail(email);
-        toast('Sent email your email address');
-        }else{
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email your email address');
+        } else {
             toast("please enter your email address")
         }
     }
@@ -92,14 +107,14 @@ const Login = () => {
                 {errors?.email && <p className="error-message">{errors.email}</p>}
                 <label for="password">Password</label>
                 <div className='possitionR'>
-                    <input type={showPass?"text":"password"} placeholder="password" onChange={handealPassword} />
+                    <input type={showPass ? "text" : "password"} placeholder="password" onChange={handealPassword} />
                     <p className='possitionA' onClick={() => setPass(!showPass)}><AiFillEye /></p>
                 </div>
                 {errors?.password && <p className="error-message">{errors.password}</p>}
 
                 <button>Sing In</button>
-                <SocialLogin/>
-                
+                <SocialLogin />
+
             </form>
             <p>Don't Have an account? <Link to="/register">Sing up First</Link></p>
             <button onClick={resatePassword}>Reset Password</button>
