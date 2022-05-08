@@ -45,6 +45,8 @@ const MyItem = () => {
                         <th scope="col">Quantity</th>
                         <th scope="col">SellStatus</th>
                         <th scope="col">SupplierName</th>
+                        
+                        
                         <th scope="col">Button</th>
                     </tr>
                 </thead>

@@ -1,9 +1,11 @@
 # smartphone-warehouse
 # Client-side code Github repository LinK:
+ https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Shuvoghosh7
 
 # server-side code Github repository LinK:
-
+  https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Shuvoghosh7
 #  live website link:
+  https://smartphone-warehouse-ebc90.web.app/
 # stackoverflow Question/answer Link:
 https://stackoverflow.com/questions/72147412/how-do-i-update-a-record-using-the-put-api
 
