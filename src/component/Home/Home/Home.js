@@ -21,6 +21,7 @@ const Home = () => {
                 <div className='row'>
                     {
                         items.slice(0, 6).map(item => <Item
+                            key={item._id}
                             item={item}
                         />)
                     }

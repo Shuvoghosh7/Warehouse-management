@@ -6,6 +6,7 @@
         "Description": "Released 2022, April 22.176g, 7.4mm thickness,Android 12, One UI 4.1,128GB/256GB storage, microSDXC",
         "price": "$26.499",
         "quantity": 3,
+        "SellStatus":"available",
         "supplierName": "Joy"
     },
     {
@@ -15,6 +16,7 @@
         "Description": "Released 2022, April 22,181g, 7.6mm thickness,Android 12, One UI 4.1,128GB/256GB storage, microSDXC",
         "price": "$36.499",
         "quantity": 2,
+        "SellStatus":"sold",
         "supplierName": "Rifat"
     },
     {
@@ -24,6 +26,7 @@
         "Description": "Released 2022, February 25,228g / 229g (mmWave), 8.9mm thickness,Android 12, One UI 4.1,128GB/256GB/1TB storage, no card slot",
         "price": "$40.499",
         "quantity": 3,
+        "SellStatus":"available",
         "supplierName": "Sanim"
     },
     {
@@ -33,6 +36,7 @@
         "Description": "Released 2022, April 22.176g, 7.4mm thickness,Android 12, One UI 4.1,128GB/256GB storage, microSDXC",
         "price": "$60.499",
         "quantity": 4,
+        "SellStatus":"sold",
         "supplierName": "Hapiz"
     },
     {
@@ -42,6 +46,7 @@
         "Description": "Released 2021, September 24,174g, 7.7mm thickness,iOS 15, up to iOS 15.4.1,128GB/256GB/512GB storage, no card slot",
         "price": "$50.888",
         "quantity": 2,
+        "SellStatus":"available",
         "supplierName": "kbir"
     },
     {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const ManageInventory = () => {
     const [product, setProduct] = useState([])
@@ -9,6 +9,10 @@ const ManageInventory = () => {
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
+    const navigate=useNavigate()
+    const ItemDetails = (itemDetails) => {
+        navigate(`/itemupdate/${itemDetails}`)
+    }
     const handealDelait = (delitId) => {
         const proceed = window.confirm("are you confirm,Delit This Item?")
         if (proceed) {
@@ -36,6 +40,7 @@ const ManageInventory = () => {
                         <th scope="col">price</th>
                         <th scope="col">Description</th>
                         <th scope="col">Quantity</th>
+                        <th scope="col">SellStatus</th>
                         <th scope="col">SupplierName</th>
                         <th scope="col">Button</th>
                     </tr>
@@ -49,8 +54,11 @@ const ManageInventory = () => {
                                     <td>{value.price}</td>
                                     <td>{value.Description}</td>
                                     <td>{value.quantity}</td>
+                                    <td>{value.sellStatus}</td>
                                     <td>{value.supplierName}</td>
-                                    <td><button className='btn text-danger' onClick={() => handealDelait(value._id)}><RiDeleteBin6Fill /></button></td>
+                                    <td>
+                                        <button onClick={()=>ItemDetails(value._id)} className='btn btn-outline-success rounded-pill' >updateItem</button>
+                                        <button className='btn text-danger' onClick={() => handealDelait(value._id)}><RiDeleteBin6Fill /></button></td>
                                 </tr>
                             )
                         })

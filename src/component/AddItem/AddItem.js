@@ -14,6 +14,7 @@ const AddItem = () => {
         const Description = event.target.Description.value;
        
         const quantity = event.target.quantity.value;
+        const sellStatus = event.target.sellStatus.value;
         const supplierName = event.target.supplierName.value;
         
         const url = `http://localhost:5000/product`
@@ -23,7 +24,7 @@ const AddItem = () => {
                 'authorization':`${user.email} ${localStorage.getItem("getToken")}`,
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({picture,name,price,Description,quantity,supplierName})
+            body: JSON.stringify({picture,name,price,Description,quantity,sellStatus,supplierName})
         })
             .then(res => res.json())
             .then(result => {
@@ -40,9 +41,9 @@ const AddItem = () => {
                 <input type="text" name="picture" placeholder="image Url"/>
                 <input type="text" name="name" placeholder="Name" />
                 <input type="text" name="price" placeholder="Price" />
-                <input type="text" name="Description" placeholder="description" />
-                
+                <textarea type="text" name="Description" placeholder="description" />
                 <input type="text" name='quantity' placeholder="Quantity" />
+                <input type="text" name='sellStatus' placeholder="Sell Status" />
                 <input type="text" name='supplierName' placeholder="SupplierName" />
                 <button className='btn btn-outline-success rounded-pill'>Add New Item</button>
             </form>
