@@ -7,14 +7,14 @@ import auth from '../Firebase/Firebase.init';
 const MyItem = () => {
     const [user, loading, error] = useAuthState(auth);
     const [myItem, setMyItem] = useState([])
-    console.log(myItem)
-    useEffect(()=>{
-        const email=user.email
-        const url=`https://mysterious-river-94324.herokuapp.com/products?email=${email}`
-        fetch(url)
-        .then(res => res.json())
-        .then(data => setMyItem(data))
-    },[user])
+    useEffect(() => {
+        if (user) {
+            fetch(`http://localhost:5000/products?email=${user.email}`)
+                .then(res => res.json())
+                .then(data => setMyItem(data));
+        }
+    }, [user])
+
     const handealDelaite = (delitId) => {
         const proceed = window.confirm("are you confirm,Delit This Item?")
         if (proceed) {
@@ -36,6 +36,7 @@ const MyItem = () => {
     return (
         <div className='mt-3 container'>
             <h3>User Email:{user.email}</h3>
+            <h2>User added item:{myItem.length}</h2>
             <table className="table table-bordered">
                 <thead>
                     <tr>
